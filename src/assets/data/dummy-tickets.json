@@ -7,17 +7,17 @@
     "history": [
       {
         "date": "20-10-10",
-        "message": "sjflsjl",
+        "message": "I need to book a ticket",
         "messageBy": "client"
       },
       {
         "date": "20-10-10",
-        "message": "sjflsjl",
+        "message": "My family need four tickets",
         "messageBy": "operator"
       },
       {
         "date": "20-10-10",
-        "message": "sjflsjl",
+        "message": "Unfortunately we need to cancel our tickets",
         "messageBy": "client"
       }
     ]
