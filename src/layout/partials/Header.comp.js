@@ -32,6 +32,7 @@ export const Header = () => {
           {/* </LinkContainer> */}
 
           {/* <Nav.Link onClick={logMeOut}>Logout</Nav.Link> */}
+          <Nav.Link>Logout</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
