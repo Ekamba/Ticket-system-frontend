@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { Table } from "react-bootstrap";
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const TicketTable = ({ tickets }) => {
   //   const { searchTicketList, isLoading, error } = useSelector(
@@ -31,8 +31,7 @@ export const TicketTable = ({ tickets }) => {
             <tr key={row._id}>
               <td>{row._id}</td>
               <td>
-                {/* <Link to={`/ticket/${row._id}`}>{row.subject}</Link> */}
-                {row.subject}
+                <Link to={`/ticket/${row._id}`}>{row.subject}</Link>
               </td>
               <td>{row.status}</td>
               <td>{row.addedAt}</td>

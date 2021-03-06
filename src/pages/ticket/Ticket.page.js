@@ -2,18 +2,28 @@ import React, { useState, useEffect } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Button, Spinner, Alert } from "react-bootstrap";
 import { PageBreadcrumb } from "../../components/breadcrumb/Breadcrumb.comp";
+import tickets from "../../assets/data/dummy-tickets.json";
 import { MessageHistory } from "../../components/message-history/MessageHistory.comp";
 import { UpdateTicket } from "../../components/update-ticket/UpdateTicket.comp";
-// import { useParams } from "react-router-dom";
-import tickets from "../../assets/data/dummy-tickets.json";
+import { useParams } from "react-router-dom";
 
 // import { fetchSingleTicket, closeTicket } from "../ticket-list/ticketsAction";
 // import { resetResponseMsg } from "../ticket-list/ticketsSlice";
-const ticket = tickets[0];
 
 export const Ticket = () => {
+  const { tId } = useParams();
+
   const [message, setMessage] = useState("");
-  //   const { tId } = useParams();
+  const [ticket, setTicket] = useState("");
+
+  useEffect(() => {
+    for (let i = 0; i < tickets.length; i++) {
+      if (tickets[i].id == tId) {
+        setTicket(tickets[i]);
+        continue;
+      }
+    }
+  }, [message, tId]);
 
   const handleOnChange = (e) => {
     setMessage(e.target.value);
@@ -30,8 +40,6 @@ export const Ticket = () => {
     // dispatch(replyOnTicket(_id, msgObj));
     setMessage("");
   };
-
-  useEffect(() => {}, [message]);
 
   //   //   const dispatch = useDispatch();
   //   const {
@@ -93,7 +101,7 @@ export const Ticket = () => {
       </Row>
       <Row className="mt-4">
         <Col>
-          <MessageHistory msg={ticket.history} />
+          {ticket.history && <MessageHistory msg={ticket.history} />}
 
           {/* {selectedTicket.conversations && ( */}
 
